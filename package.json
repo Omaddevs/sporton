@@ -8,6 +8,7 @@
     "android": "expo start --android --port 8081",
     "ios": "expo start --ios --port 8081",
     "web": "expo start --web --port 8081",
+    "build": "expo export --platform web && node scripts/fix-web-assets.js",
     "icons": "python scripts/make_icons.py"
   },
   "dependencies": {
