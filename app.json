@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "SportON",
+    "slug": "sporton",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0078FF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "uz.sporton.app"
+    },
+    "android": {
+      "package": "uz.sporton.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0078FF"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "icon": "./assets/icon.png",
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "SportON sizga eng yaqin sport majmualarini ko'rsatish uchun joylashuvingizdan foydalanadi."
+        }
+      ]
+    ]
+  }
+}
