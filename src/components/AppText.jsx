@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Text as RNText, TextInput as RNTextInput, StyleSheet } from 'react-native';
+import { Platform, Text as RNText, TextInput as RNTextInput, StyleSheet } from 'react-native';
 import { fonts } from '../theme';
 
 /**
@@ -12,11 +12,13 @@ const Text = forwardRef(function Text({ style, ...props }, ref) {
 });
 
 export const TextInput = forwardRef(function TextInput({ style, ...props }, ref) {
-  return <RNTextInput ref={ref} {...props} style={[styles.base, style]} />;
+  return <RNTextInput ref={ref} {...props} style={[styles.base, style, styles.noFocusRing]} />;
 });
 
 const styles = StyleSheet.create({
   base: { fontFamily: fonts.sans },
+  // Webda fokusdagi brauzer chegarasini (outline) o'chiramiz — inputlar fokusda o'zgarmaydi
+  noFocusRing: Platform.select({ web: { outlineStyle: 'none', outlineWidth: 0, boxShadow: 'none' }, default: {} }),
 });
 
 export default Text;
